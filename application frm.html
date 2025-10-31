@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-image: url(photos/spectre.jpg);
+            background-size: cover;
+            /* Ensures it covers the whole page */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents tiling */
+            align-content: center;
+            align-items: center;
+        }
+
+        .frm{
+            max-width: 800px;
+            max-height: 80vh;
+            align-items: center;
+            align-content: center;
+            scroll-snap-align: start;
+            border-radius: 10px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url(photos/wooden.jpg);
+            background-size: cover;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+        }
+
+        .frm h2 {
+            cursor: pointer;
+            color: aliceblue;
+        }
+
+        .frm h2:hover {
+            color: orangered;
+        }
+
+        form {
+            text-align: center;            
+            color: aliceblue;
+            margin: auto;
+        }
+
+        div{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        label,
+        input {
+            max-height: 30px;
+            border-radius: 10px;
+            background-color: transparent;
+            border: 1.5px solid whitesmoke;
+            padding: 5px;
+            max-width: 300px;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            color: orangered;
+            text-align: center;
+            margin: 5px;
+        }
+
+        label,
+        select {
+            font-size: medium;
+            margin: 5px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            max-height: 30px;
+            background-color: transparent;
+            padding: 5px;
+            max-width: 300px;
+            border-color: transparent;
+            box-sizing: border-box;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            appearance: none
+                /* removes default styling*/
+                webkit-appearance: none;
+            -moz-appearance: none;
+
+        }
+
+       
+        button {
+            border-radius: 30px;
+            padding: 10px 20px;
+            background-color: rgb(32, 3, 161), 17, 44;
+            color: black;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: large;
+            text-transform: uppercase;
+            margin: 20px;
+        }
+
+        button:hover {
+            background-color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frm">
+        <h2 style="color: aliceblue;">Course Registration Form</h2>
+        <form action="connect.php" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="First name">First name:</label>
+                <input type="text" id="First name" placeholder="First name" name="firstName" required>
+            </div>
+            <div>
+                <label for="Last name">Last name:</label>
+                <input type="text" id="Last name" placeholder="Last name" name="lastName" required>
+            </div>
+            <div>
+                <label for="gender">Gender</label>
+                <div>
+                    <label for="male"><input type="radio" name="gender" value="M">MALE</label>
+                    <label for="female"><input type="radio" name="gender" value="F">FEMALE</label>
+                </div>
+            </div>
+            <div>
+                <label for="idNo">ID No:</label>
+                <input type="text" id="idNo" placeholder="ID No" name="idNo" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="email" name="email" required>
+            </div>
+            <div>                
+                <label for="Course">Select Course</label>
+                <select name="course" id="course">
+                    <option value="Information Literacy">Information Literacy</option>
+                    <option value="Internet Fundamentals">Internet Fundamentals</option>
+                    <option value="Computer Architecture">Computer Architecture</option>
+                    <option value="Basic Computer Skills">Basic Computer Skills</option>
+                    <option value="Database Systems">Database Systems</option>
+                </select>
+            </div>
+            <div>
+                <label for="resultSlip">Upload Result Slip:</label>
+                <input type="file" id="resultSlip" name="resultSlip" required>
+            </div>
+
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+    
+</body>
+
+</html>
